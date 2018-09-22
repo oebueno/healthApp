@@ -1,0 +1,36 @@
+import React, {Component} from 'react';
+import {AppRegistry, Text, View, Navigator} from 'react-native';
+import {createStackNavigator} from 'react-navigation';
+
+// const App = createStackNavigator({
+//     Home: { screen: HomeScreen },
+//     Profile: { screen: ProfileScreen}
+// });
+
+export default createStackNavigator({
+  Home: {
+    screen: HomeScreen,
+  },
+});
+
+
+class HomeScreen extends Component{
+    renderScene(route, navigator){
+        switch(route.id){
+            case 'component5' : 
+                return (<Component5 navigator={navigator} title="component5" />)
+            case 'component6' : 
+                return (<Component6 navigator={navigator} title="component6" />)
+        }
+    }
+
+    render(){        
+        return(
+            <View style={{flex:1, alignItems:'center', justifyContent:'center'}}>
+                <Text>HomeScreen</Text>
+            </View>
+        )
+    }
+}
+
+//AppRegistry.registerComponent('app', () => app)
